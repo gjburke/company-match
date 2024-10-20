@@ -6,6 +6,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/name", methods=["GET"])
-def name():
-    return make_response(jsonify("Company Match"), 200)
+@app.route("/company_names", method=['GET'])
+def company_names():
+	# doing most of the work with huggingface models
+	company_list = ["Meta", "Nvidia", "Microsoft", "IBM", "Google", "Amazon", "Tencent", "SpaceX", "PrairieLearn", "Apple"]
+	json = jsonify(company_list)
+	return make_response(json, 200)
