@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/company_names", method=['GET'])
+@app.route("/company_names", methods=["GET"])
 def company_names():
 	# doing most of the work with huggingface models
 	company_list = ["Meta", "Nvidia", "Microsoft", "IBM", "Google", "Amazon", "Tencent", "SpaceX", "PrairieLearn", "Apple"]
