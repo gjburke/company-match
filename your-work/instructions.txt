@@ -1,0 +1,13 @@
+This is a place to put the work that you have done without interfering with the shared project code. 
+
+This will help people see your contributions since we aren't using a usual git workflow where you commit your own work. 
+
+In order to upload your work, make sure you are on a separate branch other than main. 
+
+1. You can make your own branch by doing 'git checkout -b "branch-name"'.
+2. Then add a folder with your name on it to the folder and upload whatever files you would like to showcase as your work.
+3. When you are done making your changes, push your branch to the github with 'git push origin branch-name'
+
+Then I will be able to look and make sure that you haven't edited any of the main files, and I'll merge your branch so it'll show on the github!
+
+This will help you show the contributions you've made within our slightly unorthodox system of using the github.
