@@ -12,3 +12,6 @@ def company_names():
 	company_list = ["Meta", "Nvidia", "Microsoft", "IBM", "Google", "Amazon", "Tencent", "SpaceX", "PrairieLearn", "Apple"]
 	json = jsonify(company_list)
 	return make_response(json, 200)
+
+if(__name__ == "__main__"):
+      app.run()
