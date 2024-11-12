@@ -1,6 +1,6 @@
 function getCompanyList() {
 
-	const input = document.getElementById('paragraph').value.trim();
+	const input = document.getElementById('user-input').value.trim();
 
 	const headers = {
 		'Content-Type' : 'application/json',
@@ -16,6 +16,7 @@ function getCompanyList() {
 	.then(data => {
     	const resultsList = document.getElementById("results-list");
     	resultsList.innerHTML = "";
+		resultsList.className = "outputtext";
 
     	data.forEach(companyName => {
         	const listItem = document.createElement("li");

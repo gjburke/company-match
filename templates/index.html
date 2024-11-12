@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Karla:ital,wght@0,200..800;1,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Company Match</title>
 </head>
 <body>
@@ -10,16 +14,21 @@
         <h1> 
             Company Match
         </h1>
-        <div class="nav">
-            <ul class="navbar">
-                <li>
-                    <a class="navbar" href="#about">About</a>
+         <div class="nav">
+            <ul class="navbar" id="dropdown" >
+                <li class="noBorder">
+                    <p>
+                        |||
+                    </p>
                 </li>
-                <li>
-                    <a class="navbar" href="#input">How to Input</a>
+                <li id="dropdownObject" >
+                    <a class="navbar" style="text-decoration: none;" href="#about">About</a>
                 </li>
-                <li>
-                    <a class="navbar" href="#indeed">Job Search</a>
+                <li id="dropdownObject">
+                    <a class="navbar" style="text-decoration: none;" href="#input">How to Input</a>
+                </li>
+                <li id="dropdownObject">
+                    <a class="navbar" style="text-decoration: none;" href="#indeed">Job Search</a>
                 </li>
             </ul>
         </div>
@@ -66,17 +75,21 @@
                 </div>
                 <form>
                     <label for="paragraph">Enter your description:</label>
-                    <textarea id="paragraph" placeholder="Write your description here..."></textarea>
+                  	<br/>
+                    <textarea id="user-input" placeholder="Write your description here..."></textarea>
                     <br>
                     <button type="button" onClick="getCompanyList()">Submit</button>
                 </form>
             </div>
             <div class="box Output-box">
-                <h4>Match results:</h4>
-                <div id="match-results">
-                    <ul id="results-list">
-                        <!--Use JS to add <li> elements in here, have their text be the company names!-->
-                    </ul>
+                <h3 id = "resultheading">We found some matches!</h3>
+                <div id = "companycardlist">
+                    <div id = "match-results">
+                        <h3 id = "popupheaders">Your top companies:</h3>
+                        <ul id = "results-list">
+                            <li><p class = "outputtext"> </p></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
