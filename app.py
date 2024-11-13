@@ -12,23 +12,23 @@ def getTopCompanies(user_query):
 	k = 10
 
 	df = pd.read_csv('./curr_data.csv')
-	print(user_query)
-	print(df)
+	# print(user_query)
+	# print(df)
 	# similarities between the query and 'Company Description' columns - converted in the form of a list
 	user_encoding = transformer.encode(user_query)
 	company_encoding = transformer.encode(df['Company Description'].tolist())
 	similarities=transformer.similarity(user_encoding, company_encoding)
-	print(similarities)
+	# print(similarities)
 
-	#adding similarities column to dataframe
+	# adding similarities column to dataframe
 	df['similarities']=similarities[0]
-	print(df)
+	# print(df)
 
 	#taking out 5 rows with largest similarity value
 	df_largest=df.nlargest(k,'similarities')
 
 	top_entries = (df_largest['Company Name']).tolist()
-	print(top_entries)
+	# print(top_entries)
 
 	return top_entries
 
