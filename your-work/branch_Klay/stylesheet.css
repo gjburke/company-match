@@ -1,0 +1,370 @@
+.aboutus {
+    height: 900px;
+    /*width: 100%;*/
+    text-align: center;
+}
+
+#card {
+    height: 540px;
+    width: 400px;
+    background-color: white;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgb(66, 135, 245);
+    border-radius: 20px;
+    color: black;
+    transition-duration: .4s;
+    text-align: center;
+    list-style-position: inside;
+}
+
+#aboutusflexcontent {
+    display: flex;
+}
+
+#cardpicture {
+    height: 200px;
+    width: 220px;
+    padding-left: 25px;
+    padding-top: 30px;
+}
+
+#aboutusbutton {
+    margin-top: 30px;
+    height: 40px;
+    width: 250px;
+    font-size: 16px;
+    font-family: "JetBrains Mono";
+    font-weight: bold;
+    background-color: rgb(167, 200, 252);
+    border-radius: 5px;
+    transition-duration: .4s;
+}
+
+#aboutusbutton:hover {
+    color: blue;
+    background-color: white;
+    border-color: black;
+    border-width: 4px;
+}
+
+.infosection {
+    display: flex;
+    flex-direction: column;
+    width: 700px;    
+    text-align: center;
+    margin-left: 130px;
+    margin-top: 40px;
+    align-items: center;
+}
+
+#frontpageparagraph {
+    width: 750px;
+}
+
+#frontpageheader {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black;
+    animation: typing 1.8s steps(30, end), blink-caret 2s step-end infinite;
+    font-size: 19px;
+}
+
+/*
+@keyframes typing {
+    from {
+        width: 0;
+    } to {
+        width: 100%;
+    }
+}
+*/
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: black;
+    }
+}
+
+#companymatchtext {
+    color: rgb(242, 176, 70);
+}
+
+#subheadingaboutus {
+    text-decoration-line: underline;
+}
+
+#card:hover {
+    box-shadow: 5px 5px 10px 10px black;
+}
+
+#tryoutbutton {
+    height: 80px;
+    width: 400px;
+    border: none;
+    background-color: rgb(167, 200, 252);
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 4px;
+    border-color: black;
+    color: white;
+    font-family: "JetBrains Mono";
+    font-size: 20px;
+    margin-top: 60px;
+    font-weight: bold;
+    transition-duration: 1s;
+}
+
+#tryoutbutton:hover {
+    color: rgb(34, 68, 122);
+    background-color: white;
+}
+
+#directionssubheading {
+    font-size: 11px;
+    text-decoration: underline;
+    margin-top: 90px;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    font-family: "Karla";
+    background-color:#c8ddfd;
+    display: grid;
+    color: aliceblue;
+}
+
+.frame{ 
+    padding-left: 17vh;
+  	padding-top: 15vh;
+    border: 0;
+    margin: 0;
+    /*width: 100%;*/
+    height: 90vh;
+}
+
+#logo{
+    background-color:#c8ddfd;
+    color: #3d83d5;
+    /*width: 100%;*/
+    height: 8vh;
+    position: sticky;
+    top: 0px;
+    padding: 2vh;
+    padding-left: 7vh;
+}
+
+#about{
+    background-color: #99c4f1;
+    color:aliceblue;
+    size: 20px;
+  	/*width: 100%;*/
+}
+
+#input{
+    background-color:#75abf4;
+}
+
+#indeed{
+    background-color:#3d83d5;
+}
+
+.nav{
+    border: #3d83d5;
+    color:white;
+    /*width: 100%;*/
+    height: 50px;
+    position:absolute;
+    top: 15vh;
+    /*left: 0.5vh;*/
+    right: 93%;
+}
+    
+#dropdown {
+	border: 0px;
+}
+
+#dropdownObject {
+	visibility: hidden;
+  opacity: 0;
+  transition-duration: 0.8s;
+}
+    
+#dropdown:hover #dropdownObject {
+	visibility: visible;
+  opacity: 1;
+  transition-duration: 0.7s;
+}
+
+.nav ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav li {
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    color: #c8ddfd;
+}
+
+.nav a {
+    color: white;
+}
+
+.nav a:hover {
+    color: #094b96;
+}
+
+.nav li:hover {
+    border: 1px solid #c8ddfd;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.content {
+    display: flex;
+    justify-content: bottom;
+    align-items: center;
+    height: calc(100vh - 100px); /* Adjusted height */
+}
+
+.description {
+    width: 50%;
+    font-size: 18px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.IO {
+    display: flex;
+}
+
+.Input-box {
+    width: 35%;
+    padding: 5%;
+    margin: 2.5%;
+    border-style: solid;
+    border-color: blue;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+ 	height: 450px;
+}
+
+.Output-box {
+    width: 35%;
+    padding: 5%;
+    margin: 2.5%;
+    border-style: solid;
+    border-color: green;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+  	height: 450px;
+}
+
+#Output-box {
+    display: none;
+}
+
+.company {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+#bottomnavbar {
+    background-color: rgb(34, 68, 122);
+    color: white;
+    height: 250px;
+}
+
+.bottomnavbarcontent {
+    display: flex;
+}
+
+.bnavbarcol1 {
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+#results-list {
+    list-style-type: none;
+}
+
+.result-list-item {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.result-list-item.hovered {
+    box-shadow: 5px 5px 10px 10px black;
+    transform: scale(1.2);
+}
+#user-input {
+	height: 200px;
+  width: 100%;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    bottom: 25%;
+    width: 50%;
+    height: 50%;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: blue;
+    background-color: white;
+    color: black;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.popup-content-list {
+    /* display: flex;
+    flex-direction: column; */
+    left: 2%;
+    top: 5%;
+    width: 90%;
+    height: 80%;
+    position: absolute;
+    color:blue;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popupListItem {
+    display: flex;
+    padding: 20px;
+    font-size: 20px;
+    color: black;
+}
