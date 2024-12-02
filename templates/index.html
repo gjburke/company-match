@@ -10,13 +10,6 @@
     <title>Company Match</title>
 </head>
 <body>
-    <div id="popup" class="popup">
-        <ul id="popup-content-list" class="popup-content-list">
-            <li>this is a placeholder</li>
-        </ul>
-        <div class="close-button" onclick="hide_popup()">close</div>
-    </div>
-    
     <div class="frame" id="logo">
         <h1> 
             Company Match
@@ -60,7 +53,7 @@
                     <p id = "subheadingaboutus">The ability to use proven models to find a company culture where you'd make a right fit</p>
                     <h1 id = "frontpageheader">Finding a <span id = "companymatchtext">Company</span> That <span id = "companymatchtext">Matches</span> What You Are Looking For</h1>
                     <p1 id = "frontpageparagraph">Welcome to <span id = "companymatchtext">CompanyMatch!</span> We are your go-to platform for finding the perfect job match based on your unique skills, values, and career aspirations. Our mission is to bridge the gap between job seekers and employers by providing a personalized job search experience. Whether you're just starting your career or looking for new opportunities, CompanyMatch uses advanced algorithms to pair you with companies that align with your professional goals and work culture preferences. Join us today and take the next step towards finding your ideal company and career path!</p1>
-                    <button id = "tryoutbutton"><a href = "#indeed">Try Out Our CompanyMatch Technology!</a></button>
+                    <button id = "tryoutbutton"><a href = "#inputsection">Try Out Our CompanyMatch Technology!</a></button>
                 </div>
             </div>
             <p id = "directionssubheading">Follow along with the directions for each piece of input. After you are done, click submit on the left-hand side and you will be returned a list of matching companies. Good luck with your corporate journey!</p>
@@ -85,10 +78,10 @@
                   	<br/>
                     <textarea id="user-input" placeholder="Write your description here..."></textarea>
                     <br>
-                    <button type="button" onClick="getAndDisplayResult()">Submit</button>
+                    <button type="button" onClick="getCompanyList()">Submit</button>
                 </form>
             </div>
-            <div class="box Output-box" id="Output-box">
+            <div class="box Output-box">
                 <h3 id = "resultheading">We found some matches!</h3>
                 <div id = "companycardlist">
                     <div id = "match-results">
