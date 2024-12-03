@@ -264,7 +264,7 @@ body{
     color: black;
     display: flex;
     flex-direction: column;
- 		height: 275px;
+ 	height: 450px;
 }
 
 .Output-box {
@@ -276,9 +276,12 @@ body{
     border-radius: 20px;
     background-color: white;
     color: black;
-    display: flex;
     flex-direction: column;
-  	height: 275px;
+  	height: 450px;
+}
+
+#Output-box {
+    display: none;
 }
 
 .company {
@@ -306,18 +309,62 @@ body{
     list-style-type: none;
 }
 
-#results-list li {
+.result-list-item {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
     margin: 5px;
 }
 
-#results-list li:hover {
+.result-list-item.hovered {
     box-shadow: 5px 5px 10px 10px black;
     transform: scale(1.2);
 }
 #user-input {
 	height: 200px;
   width: 100%;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    bottom: 25%;
+    width: 50%;
+    height: 50%;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: blue;
+    background-color: white;
+    color: black;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.popup-content-list {
+    /* display: flex;
+    flex-direction: column; */
+    left: 2%;
+    top: 5%;
+    width: 90%;
+    height: 80%;
+    position: absolute;
+    color:blue;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popupListItem {
+    display: flex;
+    padding: 20px;
+    font-size: 20px;
+    color: black;
 }
