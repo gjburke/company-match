@@ -5,8 +5,8 @@
 // 	"companyName" : {"Percent Match": XX, "CompanyDescription": "XXX"},
 // }
 const companyInfoObj = {
-	"Meta" : {"Percent Match": 0.5, "Company Description": "Meta builds the future of human connection and the technology that makes it possible."},
-	"NVIDIA" : {"Percent Match": 0.5, "Company Description": "Nvidia Corporation is an American multinational corporation and technology company headquartered in Santa Clara, California, and incorporated in Delaware."},
+	"Meta" : {"Percent Match": 0.85, "Company Description": "Meta builds the future of human connection and the technology that makes it possible."},
+	"NVIDIA" : {"Percent Match": 0.93, "Company Description": "Nvidia Corporation is an American multinational corporation and technology company headquartered in Santa Clara, California, and incorporated in Delaware."},
 }
 
 function display_and_render_popup(companyName) {
