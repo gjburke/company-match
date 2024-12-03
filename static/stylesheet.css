@@ -367,4 +367,68 @@ body{
     padding: 20px;
     font-size: 20px;
     color: black;
+
+#changingFolder {
+    position: absolute;
+    width: 700px;
+    height: 450px;
+    background-color: #99c4f1;
+    color: #3d83d5;
+    top: 1300px;
+    left: 607px;
+    border-radius: 0px 15px 15px 15px;
+}
+#main-container {
+    display: -moz-grid-line;
+    padding: 30px;
+}
+
+#main-container h2 {
+    text-align: center;
+    background-color: white;
+    border: 2px solid #094b96;
+    border-radius: 15px;
+    color: #3d83d5;
+    padding: 20px;
+    font-size: 20px;
+    height: 465px;
+}
+
+#right-side ul {
+    list-style: none;
+}
+
+#right-side li {
+    display: inline;
+}
+
+#bottom-bar {
+    display: inline;
+}
+
+#left-side {
+    float: left;
+    width: 30%;
+}
+
+#right-side {
+    float: left;
+}
+
+#zero {
+    background-color: white;
+    color: rgb(167, 200, 252);
+    border: none;
+    border-radius: 15px 15px 0px 0px;
+    padding: 15px;
+    font-size: 25px;
+}
+
+#one {
+    background-color: rgb(167, 200, 252);
+    color: rgb(66, 135, 245);
+    border: none;
+    border-radius: 15px 15px 0px 0px;
+    padding: 15px;
+    font-size: 25px;
 }
