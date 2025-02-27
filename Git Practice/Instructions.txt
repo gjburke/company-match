@@ -1,0 +1,12 @@
+Add your folders here!
+
+Each folder should have your name on it...
+
+Feel free to add anything in your folder:
+- A text file with a cool quote, fun fact about yourself, thought
+- A piece of interesting code
+- An image of whatever
+ 
+Just make sure it's not too large, I think github will get angry
+
+But have fun with it!
