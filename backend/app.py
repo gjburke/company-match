@@ -49,10 +49,6 @@ def rerank(top_company_names, query):
 
 	return top_comapny_names
 
-@app.route("/")
-def index():
-	return render_template("index.html")
-
 @app.route("/company_names", methods=["POST"])
 def company_names():
 	if request.method == "POST":
