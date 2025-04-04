@@ -1,0 +1,30 @@
+.IOBox{
+    display: flex;
+}
+
+.InputBox{
+    width: 35%;
+    padding: 5%;
+    margin: 2.5%;
+    border-style: solid;
+    border-color: blue;
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+ 	height: 450px;
+}
+
+.OutputBox{
+    width: 35%;
+    padding: 5%;
+    margin: 2.5%;
+    border-style: solid;
+    border-color: green;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+  	height: 450px;
+}
