@@ -2,11 +2,24 @@ from flask import Flask, render_template, request, jsonify, make_response
 from sentence_transformers import SentenceTransformer, CrossEncoder
 import pandas as pd
 import numpy as np
+from supabase import create_client, Client
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 app = Flask(__name__)
 url = 'http://127.0.0.1:5000'
+#initialize supabase client
+supaurl = os.environ.get("SUPABASE_URL")
+print(supaurl)
+key = os.environ.get("SUPABASE_KEY")
+supabase: Client = create_client(supaurl, key) #change supabase url and key to actual values
 
-data = pd.read_csv('./curr_data.csv')
+#data = pd.read_csv('./curr_data.csv')
+#print(data)
+supa_data = supabase.table("company-data").select("*").execute()#change table name to actual table name
+print(supa_data)
+data = pd.DataFrame(supa_data.data)
 transformer = SentenceTransformer("all-MiniLM-L6-v2")
 crossencoder = CrossEncoder("cross-encoder/stsb-distilroberta-base")
 
