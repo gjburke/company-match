@@ -2,50 +2,23 @@ from flask import Flask, render_template, request, jsonify, make_response
 from sentence_transformers import SentenceTransformer, CrossEncoder
 import pandas as pd
 import numpy as np
-from sqlalchemy import create_engine, text,  MetaData, Table, Column, Integer, String
-from supabase import create_client, Client
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
 app = Flask(__name__)
 url = 'http://127.0.0.1:5000'
 
-#connecting to SQL Alchemy
-supabase_Url = os.environ.get("SUPABASE_URL")
-engine = create_engine(supabase_Url, echo=True) #echo=True -> debugging tool: prints out all the raw SQL statements that SQLAlchemy executes under the hood
-
-
-#data = pd.read_csv('./curr_data.csv')
-#print(data)
-#setup for fetching company data using Supabase and querying through SQL Alchemy 
-def fetch_company_data(): 
-	query = text('SELECT * FROM "Descriptions";')
-	df = pd.read_sql(query, engine)
-	return df
-
-metaData = MetaData() #using Metadata let FlaskAPI know how our table is structured -> "blueprint" of our Supabase
-
-Descriptions = Table(
-	"Descriptions", metaData, 
-	Column("Name", String, primary_key= True), #every row must have unique Name, and SQL Alchemy will use it as main identifier
-	Column("Values", String),
-	Column("Culture", String),
-	Column("Description", String),
-	Column("Hiring", String)
-)
+data = pd.read_csv('./curr_data.csv')
 transformer = SentenceTransformer("all-MiniLM-L6-v2")
 crossencoder = CrossEncoder("cross-encoder/stsb-distilroberta-base")
 
 def getTopCompanies(user_query):
 	k = 10
-	df = fetch_company_data()
-	
+	df = data
+	print(df)
 	# print(user_query)
 	# print(df)
 	# similarities between the query and 'Company Description' columns - converted in the form of a list
 	user_encoding = transformer.encode(user_query)
-	company_encoding = transformer.encode(df['Description'].tolist())
+	company_encoding = transformer.encode(df['Company Description'].tolist())
 	similarities=transformer.similarity(user_encoding, company_encoding)
 	# print(similarities)
 
@@ -56,16 +29,15 @@ def getTopCompanies(user_query):
 	#taking out 5 rows with largest similarity value
 	df_largest=df.nlargest(k,'similarities')
 
-	top_entries = (df_largest['Name']).tolist()
+	top_entries = (df_largest['Company Name']).tolist()
 	# print(top_entries)
 
 	return top_entries
 
 def rerank(top_company_names, query):
-	df = fetch_company_data()
-	top_df = df[df['Name'].isin(top_company_names)]
+	top_df = data[data['Company Name'].isin(top_company_names)]
 	print(top_df)
-	column_values = top_df['Description'].tolist()
+	column_values = top_df['Company Description'].tolist()
 
 	crossencodecol = "CERanks"
 	top_df[crossencodecol] = crossencoder.predict([(query, value) for value in column_values])
@@ -73,9 +45,9 @@ def rerank(top_company_names, query):
 	n = len(top_company_names)
 
 	reranked_top_companies = top_df.nlargest(n, crossencodecol)
-	top_company_names = reranked_top_companies['Name'].tolist()
+	top_comapny_names = reranked_top_companies['Company Name'].tolist()
 
-	return top_company_names
+	return top_comapny_names
 
 @app.route("/")
 def index():
