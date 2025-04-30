@@ -1,0 +1,30 @@
+.tab-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.tab-button {
+    background: transparent;
+    color: #3d83d5;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tab-button:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-button.active {
+    background-color: #3d83d5;
+    color: #fff;
+}
+
+.tab-content {
+    padding: 16px;
+}

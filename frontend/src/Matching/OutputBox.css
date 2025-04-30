@@ -1,0 +1,12 @@
+.OutputBox{
+    width: 35%;
+    padding: 5%;
+    margin: 2.5%;
+    border-style: solid;
+    border-color: green;
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    flex-direction: column;
+  	height: 450px;
+}

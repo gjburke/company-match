@@ -1,44 +1,36 @@
 import "./IOBox.css";
+import InputBox from "./InputBox";
+import OutputBox from "./OutputBox";
+
 import {useState} from 'react';
 
 export default function IOBox() {
-    // const [inputValue, setInputValue] = useState('');
-    const [submittedValue, setSubmittedValue] = useState('');
+    const [messages, setMessages] = useState<string[]>([]);
 
-    const handleSubmit = (e:any) => {
-        e.preventDefault();
-        setSubmittedValue(e.target[0].value);
+    const handleInputSubmit = (input: string) => {
+        const headers = {
+            'Content-Type' : 'application/json',
+            // 'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
+            'Accept' : 'application/json',
+        }
+        
+        fetch("http://127.0.0.1:5000/company_names", {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify({query: input}),
+        })
+        .then(response => response.json())
+        .then(data => {
+            setMessages(data);
+            console.log(data);
+        })
+        .catch(error => console.error("Error: ", error));
     };
 
     return (
         <div className="IOBox">
-            <div className="InputBox">
-                <div>
-                    filters-placeholder
-                </div>
-                <form onSubmit={handleSubmit}>
-                    <label>Enter your description:</label>
-                    <br/>
-                    <textarea placeholder="Write your description here..."></textarea>
-                    <br/>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-
-            <div className="OutputBox">
-                <div>
-                    <h3>We found some matches!</h3>
-                    <div>
-                        <div>
-                            <h3>Your top companies:</h3>
-                            <div>{submittedValue}</div>
-                            {/* <ul>
-                                <li><p> </p></li>
-                            </ul> */}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <InputBox onSubmit={handleInputSubmit}/>
+            <OutputBox messages={messages}/>
         </div>
     );
 }
