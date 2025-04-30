@@ -11,7 +11,7 @@ export default function IOBox() {
         const headers = {
             'Content-Type' : 'application/json',
             // 'Access-Control-Allow-Origin': 'http://127.0.0.1:3000',
-            'Accept' : 'application/json',
+            //'Accept' : 'application/json',
         }
         
         fetch("http://127.0.0.1:5000/company_names", {

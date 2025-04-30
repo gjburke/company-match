@@ -9,9 +9,12 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 import heapq
 
+from flask_cors import CORS
+
 
 app = Flask(__name__)
-url = 'http://127.0.0.1:5000'
+url = 'http://localhost:3000'
+CORS(app, origins=[url])
 
 from app import app
 
@@ -146,7 +149,7 @@ def company_names():
 		company_list = rerank(company_list, user_query)
 		json = jsonify(company_list)
 		response = make_response(json, 200)
-		response.headers.add('Access-Control-Allow-Origin', url)
+		#response.headers.add('Access-Control-Allow-Origin', url)
 		return response
 	
 	
