@@ -3,14 +3,12 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 
 import pandas as pd
 import numpy as np
-
+from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 import os
 import heapq
-
-from flask_cors import CORS
-
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 url = 'http://localhost:3000'
@@ -18,7 +16,9 @@ CORS(app, origins=[url])
 
 from app import app
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres.vfyncineneuwxxzlqvor:BananaMatchers2467!@aws-0-us-west-1.pooler.supabase.com:6543/postgres"  # Store URI in an environment variable
+load_dotenv()
+password = os.getenv("PASSWORD")
+app.config["SQLALCHEMY_DATABASE_URI"] = f"postgresql://postgres.vfyncineneuwxxzlqvor:{password}@aws-0-us-west-1.pooler.supabase.com:6543/postgres"  # Store URI in an environment variable
 #URI key is postgresql://postgres:[PASSWORD!]@db.vfyncineneuwxxzlqvor.supabase.co:5432/postgres
 #ASK GRIFFIN FOR DATABASE PASSWORD
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False #Basically makes it where we do not track object modifications; unnecessary
@@ -150,6 +150,7 @@ def company_names():
 		json = jsonify(company_list)
 		response = make_response(json, 200)
 		#response.headers.add('Access-Control-Allow-Origin', url)
+		print(response)
 		return response
 	
 	
